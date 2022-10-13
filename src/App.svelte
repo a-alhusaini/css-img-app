@@ -1,8 +1,8 @@
 <script>
   import * as HtmlToImg from "html-to-image";
-  import ace from "ace-builds/src/ace.js";
-  import "ace-builds/src/ext-language_tools";
-  import "ace-builds/src/ext-error_marker";
+  import ace from "ace-builds/src-noconflict/ace.js";
+  import "ace-builds/src-noconflict/ext-language_tools";
+  import "ace-builds/src-noconflict/ext-error_marker";
   import { onMount } from "svelte";
 
   let html = `
@@ -36,8 +36,6 @@
     ace.config.set("basePath", "/ace/");
     ace.config.set("workerPath", "/ace/");
 
-    ace.require("ace/ext/language_tools");
-    ace.require("ace/ext/error_marker");
     let config = {
       enableBasicAutocompletion: true,
       enableLiveAutocompletion: true,
